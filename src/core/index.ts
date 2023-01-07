@@ -1,18 +1,22 @@
 import IComponent from "core/Interfaces/IComponent";
-import IBehaviourFactory from "core/Interfaces/IBehaviourFactory";
-import IComponentFactory from "core/Interfaces/IComponentFactory";
 import UIElement from "core/Classes/UIElement";
+import IComponentPool from "./Interfaces/IComponentPool";
+import IBehaviourPool from "./Interfaces/IBehaviourPool";
+import ComponentFactory from "./Classes/ComponentFactory";
+import BehaviourFactory from "./Classes/BehaviourFactory";
 
-function blitz(components: IComponentFactory, behaviours: IBehaviourFactory) {
-    const renderer = new UIElement(behaviours, components);
 
-    return function (config: IComponent[]) {
+function blitz(components: IComponentPool, behaviours: IBehaviourPool) {
+    const componentFactory = new ComponentFactory(components);
+    const behaviourFactory = new BehaviourFactory(behaviours);
 
-        console.log(config);
+    const renderer = new UIElement(behaviourFactory, componentFactory);
+
+    return function (config: any[]) {
         const root: IComponent = {
             component: "div",
             props: {},
-            children: config
+            children: config as IComponent[]
         };
 
         return renderer.render(root);

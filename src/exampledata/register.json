@@ -1,8 +1,11 @@
 [
     {
-        "component": "div",
+        "component": "form.Register",
         "props": {
-            "title": "Register"
+            "title": "Register Form",
+            "joke": {
+                "behaviour": "funny.animal"
+            }
         },
         "children": [
             {
@@ -44,6 +47,14 @@
                     "placeholder": "Confirm your password",
                     "required": true
                 }
+            },
+            {
+                "component": "basic.Button",
+                "props": {
+                    "type": "submit",
+                    "variant": "primary"
+                },
+                "children": "Register"
             }
         ]
     }

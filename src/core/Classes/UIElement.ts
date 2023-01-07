@@ -14,12 +14,10 @@ export default class UIElement implements IUIElement {
     }
 
     render(component: IComponent): JSX.Element {
-        console.log("RENDERING: ", component.component);
         const uiComponent = this.components.get(component);
         const newProps = this.replaceBehaviours(component.props);
         const children = component.children ? this.renderChildren(component) : [];
 
-        console.log("RENDERED: ", uiComponent, newProps, children)
 
         return createElement(uiComponent, newProps, ...children);
     }
@@ -27,7 +25,7 @@ export default class UIElement implements IUIElement {
     private replaceBehaviours(props: { [key: string]: any } = {}): { [key: string]: any } {
         const newProps: { [key: string]: any } = {};
         for (const key in props) {
-            if (typeof props[key] == 'object') {
+            if (typeof props[key] === 'object') {
                 if (props[key]['behaviour']) {
                     const behaviour = this.behaviours.getBehaviour(props[key]['behaviour']);
                     if (props[key]['args']) {
@@ -48,7 +46,6 @@ export default class UIElement implements IUIElement {
     }
 
     private renderChildren(component: IComponent): JSX.Element[] {
-        console.log("RENDER CHILDREN", component);
         const { children } = component;
         if (!children) return [];
         if (typeof children === 'string') return children;

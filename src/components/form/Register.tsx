@@ -6,13 +6,11 @@ interface IProps {
     [key: string]: any;
 }
 const Register = (props: IProps) => {
-    const { children, ...rest } = props;
-
-    console.log("Register", props)
+    const { children, joke, ...rest } = props;
 
     return (
         <Form {...rest} onSubmit={() => { }}>
-            <h1>{rest.title}</h1>
+            <h1>{joke()}</h1>
             {children}
         </Form>
     )

@@ -1,6 +1,5 @@
 import IBehaviourFactory from "../Interfaces/IBehaviourFactory";
 import IBehaviourPool from "../Interfaces/IBehaviourPool";
-import IBehaviour from "../Interfaces/IBehaviour";
 
 class BehaviourFactory implements IBehaviourFactory {
 
@@ -9,14 +8,12 @@ class BehaviourFactory implements IBehaviourFactory {
         this.behaviourPool = BehaviourPool;
     }
 
-    getBehaviour(behaviour: IBehaviour): Function {
-        const { behaviour: behaviourName } = behaviour;
-        const address = behaviourName.split(".");
-
+    getBehaviour(behaviour: string): Function {
+        const address = behaviour.split(".");
         const behaviourFromPool = this.getBehaviourFromPool(address);
 
         if (!behaviourFromPool) {
-            throw new Error(`Behaviour ${behaviourName} not found in the behaviour pool`);
+            throw new Error(`Behaviour ${behaviour} not found in the behaviour pool`);
         }
 
         return behaviourFromPool;
