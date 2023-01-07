@@ -1,5 +1,8 @@
+import IComponentPool from 'core/Interfaces/IComponentPool';
 import { Button } from "react-bootstrap";
 
-export default {
-    Button
-};
+const components: IComponentPool = {
+    Button,
+}
+
+export default components;

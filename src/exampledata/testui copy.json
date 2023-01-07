@@ -1,0 +1,50 @@
+[
+    {
+        "component": "div",
+        "props": {
+            "title": "Register"
+        },
+        "children": [
+            {
+                "component": "form.Input",
+                "props": {
+                    "type": "text",
+                    "name": "name",
+                    "label": "Name",
+                    "placeholder": "Enter your name",
+                    "required": true
+                }
+            },
+            {
+                "component": "form.Input",
+                "props": {
+                    "type": "email",
+                    "name": "email",
+                    "label": "Email",
+                    "placeholder": "Enter your email",
+                    "required": true
+                }
+            },
+            {
+                "component": "form.Input",
+                "props": {
+                    "type": "password",
+                    "name": "password",
+                    "label": "Password",
+                    "placeholder": "Enter your password",
+                    "required": true
+                }
+            },
+            {
+                "component": "form.Input",
+                "props": {
+                    "type": "password",
+                    "name": "password2",
+                    "label": "Confirm Password",
+                    "placeholder": "Confirm your password",
+                    "required": true
+                }
+            }
+        ]
+    }
+]
