@@ -1,8 +1,10 @@
 import IComponentPool from 'core/Interfaces/IComponentPool';
-import { Button } from "react-bootstrap";
+import { Button, Badge } from "react-bootstrap";
+
 
 const components: IComponentPool = {
     Button,
+    Badge
 }
 
 export default components;
