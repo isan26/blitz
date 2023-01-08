@@ -24,6 +24,7 @@ export default class UIElement implements IUIElement {
 
     private replaceBehaviours(props: { [key: string]: any } = {}): { [key: string]: any } {
         const newProps: { [key: string]: any } = {};
+        console.log(props)
         for (const key in props) {
             if (typeof props[key] === 'object') {
                 if (Array.isArray(props[key])) {
