@@ -13,7 +13,7 @@ import Blitz from 'core';
 
 function App() {
   const blitz = Blitz(components, behaviours);
-  const [config, setConfig] = useState('html');
+  const [config, setConfig] = useState('jokes');
   const [data, setData] = useState<JSX.Element | null>(null);
 
   useEffect(() => {

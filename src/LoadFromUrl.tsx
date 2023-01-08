@@ -7,7 +7,7 @@ type LoadFromUrlProps = {
 }
 
 function LoadURLForm({ setData, blitz }: LoadFromUrlProps) {
-    const [url, setURL] = React.useState('http://localhost:3000/test.json');
+    const [url, setURL] = React.useState('test.json');
 
     function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
         setURL(event.target.value);
