@@ -1,0 +1,17 @@
+[
+    {
+        "component": "div",
+        "children": [
+            {
+                "component": "h1",
+                "props": {},
+                "children": "Hi there!"
+            },
+            {
+                "component": "p",
+                "props": {},
+                "children": "You have successfully loaded a page with a component that was created dynamically."
+            }
+        ]
+    }
+]
