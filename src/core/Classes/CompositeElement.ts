@@ -24,9 +24,10 @@ export default class UIElement implements IUIElement {
 
     private replaceBehaviours(props: { [key: string]: any } = {}): { [key: string]: any } {
         const newProps: { [key: string]: any } = {};
-        console.log(props)
-        for (const key in props) {
-            if (!key || !props.hasOwnProperty(key)) continue;
+        const keys = Object.getOwnPropertyNames(props);
+        console.log(keys)
+
+        keys.forEach(key => {
             if (typeof props[key] === 'object') {
                 if (Array.isArray(props[key])) {
                     newProps[key] = props[key].map((item: any) => this.replaceBehaviours(item));
@@ -53,7 +54,7 @@ export default class UIElement implements IUIElement {
             } else {
                 newProps[key] = props[key];
             }
-        }
+        });
 
 
         return newProps;
