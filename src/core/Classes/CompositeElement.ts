@@ -1,5 +1,5 @@
 import { createElement } from "react"
-import IUIElement from "../Interfaces/IUIElement";
+import IUIElement from "../Interfaces/ICompositeElement";
 import IBehaviourFactory from "core/Interfaces/IBehaviourFactory";
 import IComponentFactory from "core/Interfaces/IComponentFactory";
 import IComponent from "core/Interfaces/IComponent";
@@ -26,21 +26,33 @@ export default class UIElement implements IUIElement {
         const newProps: { [key: string]: any } = {};
         for (const key in props) {
             if (typeof props[key] === 'object') {
-                if (props[key]['behaviour']) {
-                    const behaviour = this.behaviours.getBehaviour(props[key]['behaviour']);
-                    if (props[key]['args']) {
-                        const args = props[key]['args'];
-                        newProps[key] = () => behaviour(...args);
-                    } else {
-                        newProps[key] = behaviour;
-                    }
-                } else {
-                    newProps[key] = this.replaceBehaviours(props[key]);
+                if (Array.isArray(props[key])) {
+                    newProps[key] = props[key].map((item: any) => this.replaceBehaviours(item));
                 }
+                else
+                    if (props[key]['behaviour']) {
+                        const behaviour = this.behaviours.getBehaviour(props[key]['behaviour']);
+                        const execute = props[key]['execute'];
+
+                        if (props[key]['args']) {
+                            const args = props[key]['args'];
+                            newProps[key] = () => behaviour(...args);
+                        } else {
+                            newProps[key] = behaviour;
+                        }
+
+                        if (execute) {
+                            newProps[key] = newProps[key]();
+                        }
+
+                    } else {
+                        newProps[key] = this.replaceBehaviours(props[key]);
+                    }
             } else {
                 newProps[key] = props[key];
             }
         }
+
 
         return newProps;
     }

@@ -1,8 +1,8 @@
-import IUIElement from "core/Interfaces/IUIElement";
+import IUIElement from "core/Interfaces/ICompositeElement";
 import IComponent from "core/Interfaces/IComponent";
 import IBehaviourFactory from "core/Interfaces/IBehaviourFactory";
 import IComponentFactory from "core/Interfaces/IComponentFactory";
-import UIElement from "core/Classes/UIElement";
+import UIElement from "core/Classes/CompositeElement";
 
 
 export default class Page implements IUIElement {

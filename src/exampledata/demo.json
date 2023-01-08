@@ -1,7 +1,44 @@
 [
     {
-        "component": "",
-        "props": {},
-        "children": []
+        "component": "container.Alert",
+        "props": {
+            "variant": "success"
+        },
+        "children": "Check out our funny jokes!"
+    },
+    {
+        "component": "container.Accordion",
+        "props": {
+            "items": [
+                {
+                    "title": "Animals are funny",
+                    "body": {
+                        "behaviour": "funny.animal",
+                        "execute": true
+                    }
+                },
+                {
+                    "title": "Computers are funny",
+                    "body": {
+                        "behaviour": "funny.computer",
+                        "execute": true
+                    }
+                },
+                {
+                    "title": "Food is really funny",
+                    "body": {
+                        "behaviour": "funny.food",
+                        "execute": true
+                    }
+                },
+                {
+                    "title": "Ok, this is about anything",
+                    "body": {
+                        "behaviour": "funny.misc",
+                        "execute": true
+                    }
+                }
+            ]
+        }
     }
 ]

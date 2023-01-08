@@ -19,7 +19,7 @@ const Component = (props: Props) => {
 
     return (
         <Accordion defaultActiveKey="0" {...rest}>
-            {items.map((item, index) => (
+            {items && items.map((item, index) => (
                 <Item
                     key={index}
                     eventKey={index}

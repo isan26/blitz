@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import './App.css';
 import testui from 'exampledata/testui.json';
 import register from 'exampledata/register.json';
+import demo from 'exampledata/demo.json';
 
 import behaviours from 'behaviours';
 import components from 'components';
@@ -15,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {blitz(register)}
+        {blitz(demo)}
       </header>
     </div>
   );
