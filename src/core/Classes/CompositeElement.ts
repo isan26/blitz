@@ -26,7 +26,7 @@ export default class UIElement implements IUIElement {
         const newProps: { [key: string]: any } = {};
         console.log(props)
         for (const key in props) {
-            if (!props.hasOwnProperty(key)) continue;
+            if (!key || !props.hasOwnProperty(key)) continue;
             if (typeof props[key] === 'object') {
                 if (Array.isArray(props[key])) {
                     newProps[key] = props[key].map((item: any) => this.replaceBehaviours(item));
