@@ -20,7 +20,7 @@ const TextFromPromise = ({ loadData }: TextFromPromiseProps) => {
     return (
         <>
             <p>{text}</p>
-            <Button variant="primary" onClick={loadJoke}>Load</Button>
+            <Button variant="primary" onClick={loadJoke}>Not funny, try again</Button>
         </>
     )
 }
