@@ -1,0 +1,10 @@
+[
+    {
+        "component": "basic.TextFromPromise",
+        "props": {
+            "loadData": {
+                "behaviour": "funny.fetchFromApi"
+            }
+        }
+    }
+]

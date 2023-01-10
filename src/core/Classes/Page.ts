@@ -15,6 +15,7 @@ export default class Page implements IUIElement {
 
     public setConfig(config: IComponent[]) {
         this.page = config;
+        return this;
     }
 
     public render(): JSX.Element {

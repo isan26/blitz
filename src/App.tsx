@@ -5,6 +5,7 @@ import './App.css';
 import html from 'exampledata/html.json';
 import register from 'exampledata/register.json';
 import jokes from 'exampledata/jokes.json';
+import fetchExample from 'exampledata/fetchExample.json';
 
 import behaviours from 'behaviours';
 import components from 'components';
@@ -29,9 +30,11 @@ function App() {
         break;
       case 'url': setData(null);
         break;
+      case 'load-from-api': setData(blitz(fetchExample));
+        break;
 
       default:
-        setData(blitz(html));
+        setData(blitz(fetchExample));
     }
   }, [config]);
 

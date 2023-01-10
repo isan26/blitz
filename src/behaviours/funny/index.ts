@@ -23,5 +23,11 @@ export default {
                 return getRandomItemFromArray([...Misc, ...Animal, ...Computer, ...Food]);
             }
         }
+    },
+    fetchFromApi: async () => {
+        const response = await fetch('https://official-joke-api.appspot.com/random_joke');
+        const data = await response.json();
+
+        return `${data.setup} ${data.punchline}`;
     }
 }

@@ -12,6 +12,7 @@ function APPNavBar({ setConfig }: { setConfig: (config: string) => void }) {
                         <Nav.Link href="#" onClick={() => setConfig('register')}>Form</Nav.Link>
                         <Nav.Link href="#" onClick={() => setConfig('jokes')}>Jokes</Nav.Link>
                         <Nav.Link href="#" onClick={() => setConfig('url')}>Load from URL</Nav.Link>
+                        <Nav.Link href="#" onClick={() => setConfig('load-from-api')}>Daily Joke</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>
