@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Button } from 'react-bootstrap';
 
 
 interface TextFromPromiseProps {
@@ -9,11 +10,18 @@ const TextFromPromise = ({ loadData }: TextFromPromiseProps) => {
     const [text, setText] = useState<string>('')
 
     useEffect(() => {
+        loadJoke();
+    }, []);
+
+    function loadJoke() {
         loadData().then(text => setText(text))
-    }, [])
+    }
 
     return (
-        <p>{text}</p>
+        <>
+            <p>{text}</p>
+            <Button variant="primary" onClick={loadJoke}>Load</Button>
+        </>
     )
 }
 
