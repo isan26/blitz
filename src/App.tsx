@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Navbar from './Navbar';
 import LoadURLForm from 'LoadFromUrl';
 import './App.css';
@@ -9,7 +9,7 @@ import fetchExample from 'exampledata/fetchExample.json';
 
 import behaviours from 'behaviours';
 import components from 'components';
-import Blitz from 'core';
+import Blitz from '@blitzui/core';
 
 
 function App() {

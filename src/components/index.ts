@@ -1,4 +1,4 @@
-import IComponentPool from 'core/Interfaces/IComponentPool';
+import { IComponentPool } from '@blitzui/core';
 import basic from './basic';
 import form from './form';
 import container from './container';

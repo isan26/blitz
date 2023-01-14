@@ -1,4 +1,4 @@
-import IComponentPool from 'core/Interfaces/IComponentPool';
+import { IComponentPool } from '@blitzui/core'
 import { Button, Badge } from "react-bootstrap";
 import TextFromPromise from './TextFromPromise';
 

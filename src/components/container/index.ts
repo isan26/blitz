@@ -1,4 +1,4 @@
-import IComponentPool from 'core/Interfaces/IComponentPool';
+import { IComponentPool } from '@blitzui/core'
 import { Alert } from "react-bootstrap";
 import Accordion from "./Accordion";
 import CardSimple from './CardSimple';

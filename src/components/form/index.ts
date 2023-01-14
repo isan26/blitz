@@ -1,4 +1,4 @@
-import IComponentPool from 'core/Interfaces/IComponentPool';
+import { IComponentPool } from '@blitzui/core'
 
 import Register from "./Register";
 import ReactForm from 'react-bootstrap/Form';
