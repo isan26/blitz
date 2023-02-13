@@ -1,21 +1,18 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-
 function APPNavBar({ setConfig }: { setConfig: (config: string) => void }) {
     return (
         <>
-            <Navbar bg="dark" variant="dark">
-                <Container>
-                    <Nav className="me-auto">
-                        <Nav.Link href="#" onClick={() => setConfig('html')}>HTML</Nav.Link>
-                        <Nav.Link href="#" onClick={() => setConfig('register')}>Form</Nav.Link>
-                        <Nav.Link href="#" onClick={() => setConfig('jokes')}>Jokes</Nav.Link>
-                        <Nav.Link href="#" onClick={() => setConfig('url')}>Load from URL</Nav.Link>
-                        <Nav.Link href="#" onClick={() => setConfig('load-from-api')}>Daily Joke</Nav.Link>
-                    </Nav>
-                </Container>
-            </Navbar>
+            <nav>
+                <ul>
+                    <li><strong>@blitzui</strong></li>
+                </ul>
+                <ul>
+                    <li><a href="#" onClick={() => setConfig('html')}>HTML</a></li>
+                    <li><a href="#" onClick={() => setConfig('register')}>Form</a></li>
+                    <li><a href="#" onClick={() => setConfig('jokes')}>Jokes</a></li>
+                    <li><a href="#" onClick={() => setConfig('url')}>Load from URL</a></li>
+                    <li><a href="#" onClick={() => setConfig('load-from-api')}>Daily Joke</a></li>
+                </ul>
+            </nav>
         </>
     );
 }

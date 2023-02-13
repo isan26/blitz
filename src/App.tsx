@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import Navbar from './Navbar';
 import LoadURLForm from 'LoadFromUrl';
-import './App.css';
 import html from 'exampledata/html.json';
 import register from 'exampledata/register.json';
 import jokes from 'exampledata/jokes.json';
@@ -39,14 +38,21 @@ function App() {
   }, [config]);
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className='container'>
+      <header className='container'>
         <Navbar setConfig={setConfig} />
+      </header>
+      <main className='container'>
+        <h1>Blitz UI</h1>
         {config === "url" && <LoadURLForm setData={setData} blitz={blitz} />}
         <div style={{ marginTop: "5rem" }}>
           {data}
         </div>
-      </header>
+      </main>
+      <footer className='container'>
+        <p>Blitz UI is a React UI library that allows you to build forms and other UI components from JSON.</p>
+        <p>It is a work in progress and is not yet ready for production use.</p>
+      </footer>
     </div>
   );
 }
